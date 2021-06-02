@@ -22,3 +22,4 @@ omop_inputs <-
 db_inputs   <- combineInputTables(input_table_list = omop_inputs)
 omop_db     <- buildSQLDBR(omop_tables = db_inputs,file.path(tempdir(),"mock.sqlite"))
 DBI::dbListTables(omop_db)
+DBI::dbDisconnect()
