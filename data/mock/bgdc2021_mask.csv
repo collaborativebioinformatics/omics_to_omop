@@ -1,0 +1,7 @@
+﻿alias,example1,field,table,field_idx,set_value
+individual,meep,person_source_value,person,NA,NA
+sample_type,blood,anatomic_site_source_value,specimen,NA,NA
+seq,RNASeq,sequencing_source_value,sequencing,NA,NA
+sample,GSM,specimen_source_value,specimen,NA,NA
+gene,ARID1A,gene_source_value,gene,1,NA
+variant,rs,variant_source_value,variation,1,NA
