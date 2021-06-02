@@ -34,6 +34,27 @@ https://docs.google.com/presentation/d/1aH4bp_nyztGk8JRa5dAI_K9LZqQflSXLbefREsRV
 - Talk to us!!!
 - We need to interoperate and our team can help do that. Then UX should have less headaches. 
 
+## What we currently know from each team
+**Chat with Pooja from Team 2 (PRS)**
+- Compute PRS from p-value thresh and GWAS (synthetic from UK BioBank) with synthetic phenotypes\
+- Input - VCF/genotype (blink file) with expected outcome/phenotype
+- Output - PRS, visualization, and predictive model
+- Potential Gene level PRS score
+  - Looking for gene’s contribution to the score, effect of adding and removing
+- The model is the relationship between the PRS score and the phenotype
+  - They are gonna work to figure out what it means (level of associatedness/likeihood?)
+- We still need the file type, type of outcome
+
+**Chat with Ahmad from Team 6 (UX)**
+-For handling the inputs from the various teams, we should be utilizing [snpReportR](https://github.com/collaborativebioinformatics/snpReportR)
+  - It will be a reliable skeleton to expand upon to process
+  - [Manuscript](https://docs.google.com/document/d/1UMY3YFjeoGHiFWqCg_AZAPXrnZbS4Z52qOeCrvCXWD0/) associated with it for understanding
+  - Standalone tool according to 
+-SV Team output
+  - Annotated VCF file 
+  - [GeneVar](https://jmonlong.shinyapps.io/GeneVar/) is a SV browser
+  - [GitHub](https://github.com/collaborativebioinformatics/GeneVar) link from the previous hackathon
+
 ## Potential product from this team:
 
 A sqlite database of OMOP tables that connect TCR, PRS, and other data from the hackathon teams to patient-level data. 
