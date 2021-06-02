@@ -1,5 +1,9 @@
 # Translational Gloo (project omics_to_omop)
 
+## Hackathon team
+
+Nick Giangreco, Kamileh Narinh, Meghana Tandon, Sal Volpe
+
 ## Overview:
 
 This project will describe how to pass a clinical report format to omop and import data from omop to that report.
