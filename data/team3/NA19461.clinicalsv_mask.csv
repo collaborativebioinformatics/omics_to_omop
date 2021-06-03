@@ -1,0 +1,7 @@
+alias,example1,field,table,field_idx,set_value
+gene,CYP3A4,gene_source_value,gene,NA,NA
+variant_id,rs12345,variation_source_value,variation,1,NA
+start,10001,gene_start_source_value,gene,NA,NA
+end,5/21/27,gene_end_source_value,gene,NA,NA
+svtype,deletion,variation_status_source_value,variation,NA,NA
+size,10,variation_size_source_value,variation,NA,NA
