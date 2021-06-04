@@ -26,7 +26,7 @@ To transform the genomic data output of several bioinformatics pipelines...
 
 
 ## Methodology Flowchart 
-<img width="800" alt="flowchart" src="/Users/Kamileh/Code/Tutorials_Examples/DNANexus/omics_to_omop-main/schematic_final_1.jpg">
+<img width="800" alt="flowchart" src="docs/figs/schematic_final_1.jpg">
 
 ## Installation
 
