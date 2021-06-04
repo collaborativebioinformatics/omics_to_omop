@@ -1,0 +1,4 @@
+alias,example1,field,table,field_idx,set_value
+run,Sally,specimen_source_value,specimen,1,NA
+source_name,tumor,disease_status_source_value,specimen,NA,NA
+patient_identifier,1,person_source_value,person,NA,NA

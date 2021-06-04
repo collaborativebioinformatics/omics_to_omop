@@ -12,14 +12,15 @@ dm <-
 
 omop_inputs <- 
     list(
-        bgdc2021=
+        file=
             readInputFile(
-                input_file = "data/mock/bgdc2021.csv",
+                input_file = "data/team5/GSE75935_SRA_Run_Table_Clean_Human.csv",
                 data_model = dm,
-                mask_table = loadModelMasks("data/mock/bgdc2021_mask.csv")
+                mask_table = loadModelMasks("data/team5/GSE75935_SRA_Run_Table_Clean_Human_mask.csv"),
+                transpose_input_table = T
                 )
         )
 db_inputs   <- combineInputTables(input_table_list = omop_inputs)
 omop_db     <- buildSQLDBR(omop_tables = db_inputs,file.path(tempdir(),"mock.sqlite"))
 DBI::dbListTables(omop_db)
-DBI::dbDisconnect()
+DBI::dbDisconnect(omop_db)
