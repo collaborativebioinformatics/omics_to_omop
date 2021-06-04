@@ -1,0 +1,6 @@
+person_id,birth_datetime,care_site_id,day_of_birth,death_datetime,ethnicity_concept_id,ethnicity_source_concept_id,ethnicity_source_value,gender_concept_id,gender_source_concept_id,gender_source_value,hla_source_value,location_id,month_of_birth,person_source_value,provider_id,race_concept_id,race_source_concept_id,race_source_value,year_of_birth
+1,NA,NA,NA,NA,NA,NA,NA,8532,NA,Female,NA,NA,NA,Gertrude,NA,NA,NA,NA,NA
+2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA
+3,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,NA,NA
+4,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,NA,NA,NA
+5,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

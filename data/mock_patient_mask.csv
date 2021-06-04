@@ -1,0 +1,26 @@
+alias,example1,field,table,field_idx,set_value
+person_id,19882746,person_id,person,NA,NA
+person,Gertrude,person_source_value,person,NA,NA
+gender_id,8532,gender_concept_id,person,NA,NA
+gender,Female,gender_source_value,person,NA,NA
+visit_date_1,3/1/18,visit_start_date,visit_occurrence,1,NA
+visit_date_2,5/2/18,visit_start_date,visit_occurrence,2,NA
+visit_date_3,5/20/18,visit_start_date,visit_occurrence,3,NA
+condition_id_1,4023572,condition_occurrence_id,condition_occurrence,1,NA
+condition_id_2,75860,condition_occurrence_id,condition_occurrence,2,NA
+condition_id_3,4247140,condition_occurrence_id,condition_occurrence,3,NA
+condition_id_4,36712924,condition_occurrence_id,condition_occurrence,4,NA
+condition_id_5,4060630,condition_occurrence_id,condition_occurrence,5,NA
+condition_id_6,4181351,condition_occurrence_id,condition_occurrence,6,NA
+condition_1,Abdominal bloating,condition_source_value,condition_occurrence,1,NA
+condition_2,Constipation,condition_source_value,condition_occurrence,2,NA
+condition_3,Midabdominal crampy pain,condition_source_value,condition_occurrence,3,NA
+condition_4,Abnormal blood test,condition_source_value,condition_occurrence,4,NA
+condition_5,Ultrasound scan abnormal,condition_source_value,condition_occurrence,5,NA
+condition_6,Malignant tumor of ovary,condition_source_value,condition_occurrence,6,NA
+condition_date_1,3/1/18,condition_start_date,condition_occurrence,1,NA
+condition_date_2,3/1/18,condition_start_date,condition_occurrence,2,NA
+condition_date_3,3/1/18,condition_start_date,condition_occurrence,3,NA
+condition_date_4,5/2/18,condition_start_date,condition_occurrence,4,NA
+condition_date_5,5/2/18,condition_start_date,condition_occurrence,5,NA
+condition_date_6,5/20/18,condition_start_date,condition_occurrence,6,NA

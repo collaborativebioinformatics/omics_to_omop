@@ -1,0 +1,11 @@
+condition_occurrence_id,condition_concept_id,condition_end_date,condition_end_datetime,condition_source_concept_id,condition_source_value,condition_start_date,condition_start_datetime,condition_status_concept_id,condition_status_source_value,condition_type_concept_id,person_id,provider_id,stop_reason,visit_detail_id,visit_occurrence_id
+2,NA,NA,NA,NA,Abdominal bloating,3/1/18,NA,NA,NA,NA,1,NA,NA,NA,1
+6,NA,NA,NA,NA,NA,3/1/18,NA,NA,NA,NA,1,NA,NA,NA,2
+5,NA,NA,NA,NA,Midabdominal crampy pain,3/1/18,NA,NA,NA,NA,1,NA,NA,NA,3
+1,NA,NA,NA,NA,Abnormal blood test,5/2/18,NA,NA,NA,NA,1,NA,NA,NA,4
+3,NA,NA,NA,NA,Ultrasound scan abnormal,5/2/18,NA,NA,NA,NA,1,NA,NA,NA,4
+4,NA,NA,NA,NA,Malignant tumor of ovary,5/20/18,NA,NA,NA,NA,1,NA,NA,NA,4
+7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,NA,NA,5
+7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,NA,NA,NA,6
+7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,NA,NA,NA,7
+7,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,NA,NA,NA,8

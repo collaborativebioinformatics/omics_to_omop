@@ -1,0 +1,14 @@
+specimen_id,anatomic_site_concept_id,anatomic_site_source_value,disease_status_concept_id,disease_status_source_value,person_id,quantity,specimen_concept_id,specimen_date,specimen_datetime,specimen_source_id,specimen_source_value,specimen_type_concept_id,unit_concept_id,unit_source_value
+12,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,NA,NA,NA,NA
+1,NA,NA,NA,Lymph node tumor,2,NA,NA,NA,NA,NA,NA,NA,NA,NA
+4,NA,NA,NA,Normal ovary,2,NA,NA,NA,NA,NA,NA,NA,NA,NA
+6,NA,NA,NA,Ovarian tumor,2,NA,NA,NA,NA,NA,NA,NA,NA,NA
+9,NA,NA,NA,Peritoneum tumor,2,NA,NA,NA,NA,NA,NA,NA,NA,NA
+2,NA,NA,NA,Lymph node tumor,3,NA,NA,NA,NA,NA,NA,NA,NA,NA
+5,NA,NA,NA,Normal ovary,3,NA,NA,NA,NA,NA,NA,NA,NA,NA
+7,NA,NA,NA,Ovarian tumor,3,NA,NA,NA,NA,NA,NA,NA,NA,NA
+10,NA,NA,NA,Peritoneum tumor,3,NA,NA,NA,NA,NA,NA,NA,NA,NA
+3,NA,NA,NA,Lymph node tumor,4,NA,NA,NA,NA,NA,NA,NA,NA,NA
+8,NA,NA,NA,Ovarian tumor,4,NA,NA,NA,NA,NA,NA,NA,NA,NA
+11,NA,NA,NA,Peritoneum tumor,4,NA,NA,NA,NA,NA,NA,NA,NA,NA
+13,NA,NA,NA,NA,5,NA,NA,NA,NA,NA,NA,NA,NA,NA
