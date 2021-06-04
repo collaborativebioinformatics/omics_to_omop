@@ -1,0 +1,4 @@
+alias,example1,field,table,field_idx,set_value
+sample_id,Sally,person_source_value,prs,NA,NA
+disease,glioblastoma,disease_source_value,prs,1,NA
+prs_score,2,prs_source_value,prs,1,NA
