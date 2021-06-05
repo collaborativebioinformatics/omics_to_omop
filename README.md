@@ -1,5 +1,5 @@
 # OMICS to OMOP
-Convert MultiOmics data into formats compatible with OMOP CDM 
+Convert Multi-omics data into formats compatible with OMOP CDM, making it accessible in Electronic Health Records (EHRs)
 
 ## Contributors 
 
@@ -11,7 +11,7 @@ Convert MultiOmics data into formats compatible with OMOP CDM
 
 ## Background 
 
-Clinical applications of sequencing and -omics data remain an underutilized resource for patient care in the push for precision medicine. Clinicians can learn valuable patient-specific information from sequencing data, including PRSs (polygenic risk scores), SVs (structural variants), SNPs, TCR repertoire profiling, etc. Unfortunately, this crucial information is often buried in -omics databases that are impractical for clinical use. Furthermore, the multitude of biological silos housing this data do not conform to the same naming conventions, formatting, etc. Standardization is overall lacking. Bioinformaticians, clinical informaticists, computational biologists, and other stakeholders aim to provide clinicians with diagnostically relevant genetic information in a manner that is interpretable and useful at the point of care. To do this, we map select OMICs data to the Observational Medical Outcomes Partnership Common Data Model [(OMOP CDM)](https://github.com/collaborativebioinformatics/PRS_reporting) to enforce standardization, and facilitate clinical decision support. 
+Clinical applications of sequencing and -omics data remain an underutilized resource for patient care in the push for precision medicine. Clinicians can learn valuable patient-specific information from sequencing data, including PRSs (polygenic risk scores), SVs (structural variants), SNPs, TCR repertoire profiling, etc. Unfortunately, this crucial information is often buried in -omics databases that are impractical for clinical use. Furthermore, the multitude of biological silos housing this data do not conform to the same naming conventions, formatting, etc. Standardization is overall lacking. Bioinformaticians, clinical informaticists, computational biologists, and other stakeholders aim to provide clinicians with diagnostically relevant genetic information in a manner that is interpretable and useful at the point of care. To do this, we map select OMICs data to the Observational Medical Outcomes Partnership Common Data Model [(OMOP CDM)](https://www.ohdsi.org/data-standardization/the-common-data-model) to enforce standardization, and facilitate clinical decision support. 
 
 ## Goal 
 
@@ -22,11 +22,25 @@ To transform the genomic data output of several bioinformatics pipelines...
 - TCR: [TCR repo](https://github.com/collaborativebioinformatics/TCRs_to_clinic)  
 - Expression and SNPs: [Clinically Expression & SNPs repo](https://github.com/collaborativebioinformatics/expression_and_SNPs_to_clinic)  
 
-...into a format compatible with the ROMOPOmics package (https://github.com/ngiangre/ROMOPOmics), which further standardizes the data according the [OMOP CDM] (https://www.ohdsi.org/data-standardization/the-common-data-model/) specifications. This project thus extends the existing OMOP CDM to accommodate genomic information. 
+...into a format compatible with the ROMOPOmics package (https://github.com/ngiangre/ROMOPOmics), which further standardizes the data according the [OMOP CDM](https://www.ohdsi.org/data-standardization/the-common-data-model/) specifications. This project thus extends the existing OMOP CDM to accommodate genomic information. 
 
 
-## Methodology Flowchart 
+## Methodology Flowchart
 <img width="800" alt="flowchart" src="docs/figs/schematic_final_1.jpg">
+
+The output of the bioinformatics pipelines is in either .tsv or .csv format, and is populated with fields/columns with -omics data that are 
+Currently, a mask is a .csv that has the fields/columns from the original bioinformatics pipelines, such as patient identifier, tissue source, gene, variant, etc. We manually construct a mask file, also a .tsv or .csv, containing the aforementioned genomic information, and their corresponding concepts/fields in OMOP CDM's Standardized Vocabulary, along with their [Data type](https://ohdsi.github.io/CommonDataModel/dataModelConventions.html).
+We take the outputs from the bioinformatics pipelines and develop custom masks for each unique pipeline. This maintains the privacy of patient data in accordance with [HIPAA](https://en.wikipedia.org/wiki/Health_Insurance_Portability_and_Accountability_Act). Future goals include automating the process of masking such that a custom mask does not have to be developed for each bioinformatics pipeline. 
+
+#### Converting the -omics data using the mask
+
+Future updates should consider automating this step
+
+<img alt="sample_conversion" src="docs/figs/sample_omics_mask.jpg">
+
+#### ROMOPomics (https://github.com/AndrewC160/ROMOPOmics)
+
+This package to transform the masked data into tables that adhere to the OMOP CDM, which contains all the fields and tables necessary for standardization, shareability, and interoperability.
 
 ## Installation
 
@@ -58,6 +72,14 @@ Note that there are many potentially clinically relevant fields available from t
     - Tissue source
     - SRA run  
 
+AND
+
+- 1 custom mask file per each bioinformatics pipeline that maps the -omics data to fields in the OMOP CDM
+
 #### Output
 
-- One SQLite database per input that maps input fields to the OMOP CDM
+- One SQLite database per input whose data is now OMOP CDM-compliant. The resulting standardized data tables are now interoperable, and are available for sharing across multiple platforms, including EHR/EMR systems. 
+
+#### Resources
+OHDSI/OMOP CDM: (https://www.ohdsi.org/data-standardization/the-common-data-model/)  
+ROMOPomics package: (https://github.com/AndrewC160/ROMOPOmics)
