@@ -26,6 +26,7 @@ To transform the genomic data output of several bioinformatics pipelines...
 
 
 ## Methodology Flowchart
+
 <img width="800" alt="flowchart" src="docs/figs/schematic_final_1.jpg">
 
 The output of the bioinformatics pipelines is in either .tsv or .csv format, and is populated with fields/columns with -omics data that are 
@@ -81,5 +82,7 @@ AND
 - One SQLite database per input whose data is now OMOP CDM-compliant. The resulting standardized data tables are now interoperable, and are available for sharing across multiple platforms, including EHR/EMR systems. 
 
 #### Resources
+
 OHDSI/OMOP CDM: (https://www.ohdsi.org/data-standardization/the-common-data-model/)  
+
 ROMOPomics package: (https://github.com/AndrewC160/ROMOPOmics)
