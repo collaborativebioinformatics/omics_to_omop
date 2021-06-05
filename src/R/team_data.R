@@ -2,6 +2,7 @@
 devtools::install_github("ngiangre/ROMOPOmics",force=T)
 
 library(ROMOPOmics)
+library(tidyverse)
 
 dm_file <- 
     system.file("extdata","OMOP_CDM_v6_0_custom.csv",package="ROMOPOmics",mustWork = TRUE)
