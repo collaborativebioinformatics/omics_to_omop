@@ -38,7 +38,7 @@ Future updates should consider automating this step
 
 <img alt="sample_conversion" src="docs/figs/sample_omics_mask.jpg">
 
-#### ROMOPomics (https://github.com/AndrewC160/ROMOPOmics)
+#### [ROMOPomics](https://github.com/AndrewC160/ROMOPOmics)
 
 This package to transform the masked data into tables that adhere to the OMOP CDM, which contains all the fields and tables necessary for standardization, shareability, and interoperability.
 
