@@ -33,13 +33,13 @@ The output of the bioinformatics pipelines is in either .tsv or .csv format, and
 Currently, a mask is a .csv that has the fields/columns from the original bioinformatics pipelines, such as patient identifier, tissue source, gene, variant, etc. We manually construct a mask file, also a .tsv or .csv, containing the aforementioned genomic information, and their corresponding concepts/fields in OMOP CDM's Standardized Vocabulary, along with their [Data type](https://ohdsi.github.io/CommonDataModel/dataModelConventions.html).
 We take the outputs from the bioinformatics pipelines and develop custom masks for each unique pipeline. This maintains the privacy of patient data in accordance with [HIPAA](https://en.wikipedia.org/wiki/Health_Insurance_Portability_and_Accountability_Act). Future goals include automating the process of masking such that a custom mask does not have to be developed for each bioinformatics pipeline. 
 
-#### Converting the -omics data using the mask
+### Converting the -omics data using the mask
 
 Future updates should consider automating this step
 
 <img alt="sample_conversion" src="docs/figs/sample_omics_mask.jpg">
 
-#### [ROMOPomics](https://github.com/AndrewC160/ROMOPOmics)
+### [ROMOPomics](https://github.com/AndrewC160/ROMOPOmics)
 
 This package to transform the masked data into tables that adhere to the OMOP CDM, which contains all the fields and tables necessary for standardization, shareability, and interoperability.
 
@@ -49,7 +49,7 @@ This package to transform the masked data into tables that adhere to the OMOP CD
 
 ## Implementation
 
-#### Inputs 
+### Inputs 
 
 Note that there are many potentially clinically relevant fields available from these bioinformatics pipelines. Only a few are currently implemented for demonstration purposes.  
 
@@ -77,11 +77,68 @@ AND
 
 - 1 custom mask file per each bioinformatics pipeline that maps the -omics data to fields in the OMOP CDM
 
-#### Output
+### Output
 
 - One SQLite database per input whose data is now OMOP CDM-compliant. The resulting standardized data tables are now interoperable, and are available for sharing across multiple platforms, including EHR/EMR systems. 
 
-#### Resources
+## Demonstration
+
+see also src/R/team_data.R
+
+```
+#install.packages("devtools")
+devtools::install_github("ngiangre/ROMOPOmics",force=T)
+
+library(ROMOPOmics)
+library(tidyverse)
+
+dm_file <- 
+    system.file("extdata","OMOP_CDM_v6_0_custom.csv",package="ROMOPOmics",mustWork = TRUE)
+dm <- 
+    loadDataModel(master_table_file = dm_file)
+
+omop_inputs <- 
+    list(
+        mock_patient =
+            readInputFile(
+                input_file = "data/mock_patient.csv",
+                data_model = dm,
+                mask_table = loadModelMasks("data/mock_patient_mask.csv"),
+                transpose_input_table = T
+            ),
+        team3 =
+            readInputFile(
+                input_file = "data/team3/NA19461.clinicalsv.csv",
+                data_model = dm,
+                mask_table = loadModelMasks("data/team3/NA19461.clinicalsv_mask.csv"),
+                transpose_input_table = T
+            ),
+        team4 =
+            readInputFile(
+                input_file = "data/team4/AR1-T_S4_results_subset.csv",
+                data_model = dm,
+                mask_table = loadModelMasks("data/team4/AR1-T_S4_results_mask.csv"),
+                transpose_input_table = T
+            ),
+        team5 =
+            readInputFile(
+                input_file = "data/team5/GSE75935_SRA_Run_Table_Clean_Human.csv",
+                data_model = dm,
+                mask_table = loadModelMasks("data/team5/GSE75935_SRA_Run_Table_Clean_Human_mask.csv"),
+                transpose_input_table = T
+            )
+    )
+db_inputs   <- combineInputTables(input_table_list = omop_inputs)
+for(i in seq_along(db_inputs)){
+    name_ <- names(db_inputs)[i]
+    db_inputs[[i]] %>% 
+        write_csv(paste0("data/omop_omics/",name_,".csv"))
+}
+omop_db     <- buildSQLDBR(omop_tables = db_inputs,file.path("data","omop_omics.sqlite"))
+DBI::dbListTables(omop_db)
+DBI::dbDisconnect(omop_db)
+```
+## Resources
 
 OHDSI/OMOP CDM: (https://www.ohdsi.org/data-standardization/the-common-data-model/)  
 
